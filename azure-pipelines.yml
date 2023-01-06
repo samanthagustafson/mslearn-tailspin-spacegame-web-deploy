@@ -12,7 +12,11 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: HCLAppScanOnCloud@2
+  inputs:
+    AppSecTestService: 'HCL AppScan Creds'
+    applications: 'c27bc9ec-56e5-4833-b06c-b62ff71c2472'
+    scantype: 'static'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
